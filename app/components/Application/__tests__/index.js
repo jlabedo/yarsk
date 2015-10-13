@@ -1,17 +1,16 @@
-import React from 'react/addons';
-import Application from '../index.jsx';
-import styles from '../style.sass';
+import React from 'react'
+import TestUtils from 'react-addons-test-utils'
+import Application from '../index.jsx'
+import styles from '../style.sass'
 
-describe('Application', function() {
-  it('displays the component', function() {
-    const TestUtils = React.addons.TestUtils;
-
+describe('Application', function () {
+  it('displays the component', function () {
     const application = TestUtils.renderIntoDocument(
       <Application />
-    );
+    )
 
-    const divs = TestUtils.scryRenderedDOMComponentsWithClass(application, styles.main);
+    const divs = TestUtils.scryRenderedDOMComponentsWithClass(application, styles.main)
 
-    expect(divs.length).to.equal(1);
-  });
-});
+    expect(divs.length).to.equal(1)
+  })
+})
