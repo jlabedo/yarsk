@@ -12,12 +12,14 @@ module.exports = function(options) {
 
   var localIdentName = options.production ? '[hash:base64]' : '[path]-[local]-[hash:base64:5]';
   var cssLoaders = 'style!css?localIdentName=' + localIdentName + '!autoprefixer?browsers=last 2 versions';
+  var postcssLoaders = 'style!css?module&importLoaders=1&localIdentName=' + localIdentName + '!postcss';
   var scssLoaders = cssLoaders + '!sass';
   var sassLoaders = scssLoaders + '?indentedSyntax=sass';
   var lessLoaders = cssLoaders + '!less';
 
   if (options.production) {
     cssLoaders = extractForProduction(cssLoaders);
+    postcssLoaders = extractForProduction(postcssLoaders);
     sassLoaders = extractForProduction(sassLoaders);
     scssLoaders = extractForProduction(scssLoaders);
     lessLoaders = extractForProduction(lessLoaders);
@@ -55,7 +57,7 @@ module.exports = function(options) {
         },
         {
           test: /\.css$/,
-          loader: cssLoaders,
+          loader: postcssLoaders,
         },
         {
           test: /\.sass$/,
@@ -87,6 +89,9 @@ module.exports = function(options) {
         },
       ],
     },
+    postcss: [
+      require('autoprefixer'),
+    ],
     resolve: {
       extensions: ['', '.js', '.jsx', '.sass', '.scss', '.less', '.css'],
     },

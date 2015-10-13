@@ -1,0 +1,17 @@
+@import "./reset.css";
+
+* {
+  box-sizing: border-box;
+}
+
+html, body, :global(#app) {
+  height: 100%;
+}
+
+body {
+  background: black;
+}
+
+a {
+  color: #00D8FF;
+}
