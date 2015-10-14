@@ -2,6 +2,7 @@ var fs = require('fs');
 var webpack = require('webpack');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var path = require('path');
 
 function extractForProduction(loaders) {
   return ExtractTextPlugin.extract('style', loaders.substr(loaders.indexOf('!')));
@@ -89,9 +90,26 @@ module.exports = function(options) {
         },
       ],
     },
-    postcss: [
-      require('autoprefixer'),
-    ],
+    postcss: function() {
+      var relativePath = path.resolve(this.resource);
+      console.log(relativePath);
+      return [
+        require('postcss-nested'),
+        require('postcss-import')({
+          path: [process.cwd(), relativePath],
+          // see postcss-import docs to learn about onImport callback
+          // https://github.com/postcss/postcss-import
+
+          onImport: function (files) {
+            files.forEach(this.addDependency);
+          }.bind(this)
+        }),
+        require('cssnext')({
+          url: false,
+          import: false,
+        }),
+      ]
+    },
     resolve: {
       extensions: ['', '.js', '.jsx', '.sass', '.scss', '.less', '.css'],
     },
