@@ -1,0 +1,16 @@
+.nav {
+  overflow: hidden;
+  transition: all 1s ease;
+  overflow-wrap: none;
+  a {
+    display: block;
+  }
+  a:hover {
+    background-color: color(white a(30%));
+  }
+
+  &.open {
+    width: 0;
+    min-width: 0;
+  }
+}
