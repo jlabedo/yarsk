@@ -5,16 +5,15 @@ import defaultStyles from './styles'
 
 export default class SideNavBar extends React.Component {
   render () {
-    let styles = Object.assign({}, defaultStyles, this.props.theme)
-    let cNames = classnames(styles.nav, this.props.open ? styles.open : null)
+    let cNames = classnames(defaultStyles.nav, this.props.open && defaultStyles.open)
     return (
-      <div>
-        <nav className={cNames}>
+      <div className={cNames}>
+        <nav>
           <a href='' title=''>Accueil</a>
           <a href='' title=''>Page 1</a>
           <a href='' title=''>Page 2</a>
         </nav>
-        <div className={styles.wrapper}></div>
+        <div className={defaultStyles.wrapper}></div>
       </div>
     )
   }

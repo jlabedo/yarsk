@@ -1,16 +1,33 @@
 .nav {
+  background-color: color(blue l(30%));
   overflow: hidden;
-  transition: all 1s ease;
-  overflow-wrap: none;
+  z-index: -1;
+
   a {
     display: block;
   }
+
   a:hover {
     background-color: color(white a(30%));
   }
 
-  &.open {
-    width: 0;
-    min-width: 0;
+  nav {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    width: 256px;
+    min-width: 256px;
   }
+}
+
+.wrapper {
+  width: 256px;
+  min-width: 256px;
+  transition: all 1s ease;
+}
+
+.open .wrapper {
+  width: 0;
+  min-width: 0;
 }

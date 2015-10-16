@@ -1,15 +1,9 @@
 .body {
   display: flex;
-  height: inherit;
-}
-
-.nav {
-  composes: nav from '../SideNavBar/styles';
-  width: 256px;
-  min-width: 256px;
-  background-color: color(blue l(30%));
+  height: 100%;
 }
 
 #mainWrapper{
   flex: 1;
+  background-color: white;
 }
