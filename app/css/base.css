@@ -35,7 +35,8 @@ body {
 }
 
 a {
-  color: #00D8FF;
+  color: color(var(--body-color) saturation(75%));
+  text-decoration: none;
 }
 
 /*// Make viewport responsive
@@ -61,4 +62,13 @@ a {
   @-o-viewport        { width: device-width; }
   @-webkit-viewport   { width: device-width; }
   @viewport           { width: device-width; }
+}
+
+input,
+button,
+select,
+textarea {
+  margin: 0;
+  line-height: inherit;
+  border-radius: 0;
 }

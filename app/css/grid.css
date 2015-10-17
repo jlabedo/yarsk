@@ -1,0 +1,19 @@
+@import './config';
+
+.flexContainer {
+  display: flex;
+  margin: -var(--flex-gutter) 0 0 -var(--flex-gutter);
+}
+
+.flex {
+  padding: var(--flex-gutter) 0 0 var(--flex-gutter);
+}
+
+.flex50 {
+  composes: flex;
+  flex: 0 0 50%;
+}
+
+.flex25 {
+  flex: 0 0 25%;
+}

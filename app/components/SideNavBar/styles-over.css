@@ -1,14 +1,25 @@
+@import 'app/css/config';
+
+:root {
+  --12-navbar-width: 256px;
+}
+
 .nav {
   overflow: hidden;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: -256px;
-  z-index: 100;
+  height: 100%;
+  z-index: 1;
+  background-color: var(--body-bg);
 
   a {
     display: block;
+    padding-left: 20px;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    margin-right: 10px;
+    margin-top: 6px;
+    border-right: 2px solid #cfd2da;
+    color: #cfd2da;
+    text-transform: uppercase;
   }
 
   a:hover {
@@ -16,34 +27,50 @@
   }
 
   nav {
-    background-color: color(blue l(30%));
+    background-color: inherit;
     height: 100%;
-    width: 256px;
-    min-width: 256px;
+    width: var(--12-navbar-width);
+    padding-top: 50px;
     transition: transform 1s ease;
   }
 }
 
-.wrapper {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  z-index: -1;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  background-color: gray(10%);
-  transition: opacity 1s ease;
+@media (--desktop), (--large) {
+  .nav {
+    width: 256px;
+  }
 }
 
-.open {
+@media (--mobile), (--tablet) {
+  .nav {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: -var(--12-navbar-width);
+    z-index: 100;
+  }
+
   .wrapper {
-    opacity: 0.7;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    background-color: gray(10%);
+    transition: opacity 1s ease;
   }
 
-  nav {
-    transform: translateX(256px);
+  .open {
+    .wrapper {
+      opacity: 0.7;
+    }
+
+    nav {
+      transform: translateX(var(--12-navbar-width));
+    }
   }
 }
-

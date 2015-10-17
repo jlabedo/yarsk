@@ -1,7 +1,9 @@
+@import 'app/css/config';
+
 .nav {
-  background-color: color(blue l(30%));
   overflow: hidden;
-  z-index: -1;
+  z-index: 1;
+  background-color: var(--body-bg);
 
   a {
     display: block;
@@ -27,7 +29,9 @@
   transition: all 1s ease;
 }
 
-.open .wrapper {
-  width: 0;
-  min-width: 0;
+@media (--mobile) {
+  .open .wrapper {
+    width: 0;
+    min-width: 0;
+  }
 }

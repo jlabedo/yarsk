@@ -8,8 +8,15 @@
 
   --line-height: 1.5;
 
-  --body-bg: white;
-  --body-color: gray(15%);
+  --body-bg: #252830;
+  --body-color: #cfd2da;
+
+  --flex-gutter: 1em;
 }
 
 @custom-selector :--headings h1, h2, h3, h4, h5, h6;
+
+@custom-media --mobile (width <= 40em);
+@custom-media --tablet ((width >= 40em) and (width <= 60em));
+@custom-media --desktop ((width >= 60em) and (width <= 78em));
+@custom-media --large (width >= 78em);
