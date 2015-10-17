@@ -119,7 +119,8 @@ module.exports = function (options) {
       ]
     },
     resolve: {
-      extensions: ['', '.js', '.jsx', '.sass', '.scss', '.less', '.css']
+      extensions: ['', '.js', '.jsx', '.sass', '.scss', '.less', '.css'],
+      root: process.cwd()
     },
     plugins: options.production ? [
       // Important to keep React file size down
