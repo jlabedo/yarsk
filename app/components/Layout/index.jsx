@@ -3,6 +3,7 @@ import React from 'react'
 import TopNavBar from '../TopNavBar'
 import SideNavBar from '../SideNavBar'
 import InputText from '../Forms/InputText'
+import Statistic from '../Statistic'
 
 import styles from './styles.css'
 import grid from 'app/css/grid'
@@ -25,8 +26,7 @@ export default class Layout extends React.Component {
             <h2>Main content</h2>
             <div className={grid.flexContainer}>
               <div className={grid.flex50}>
-                <div className='red'><a href='#'>Coucou</a>
-                </div>
+                <Statistic label='commandes' value='2 459' variation='+5%' />
               </div>
               <div className={grid.flex50}>
                 <InputText label='Input' />

@@ -1,0 +1,33 @@
+@import 'app/css/config';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  line-height: 1;
+}
+
+.label {
+  text-transform: uppercase;
+  font-weight: 300;
+}
+
+.value {
+  font-size: 3em;
+  font-weight: 300;
+}
+
+.variationContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.variation {
+  border-radius: 6px;
+  background-color: lightgreen;
+  color: gray(10%);
+  font-weight: 500;
+  padding: .125em .5em;
+  margin-left: 6px;
+}
