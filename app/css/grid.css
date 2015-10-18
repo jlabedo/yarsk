@@ -1,19 +1,31 @@
 @import './config';
 
-.flexContainer {
+.grid {
   display: flex;
   margin: -var(--flex-gutter) 0 0 -var(--flex-gutter);
 }
 
-.flex {
+.cell {
+  flex: 1;
   padding: var(--flex-gutter) 0 0 var(--flex-gutter);
 }
 
-.flex50 {
-  composes: flex;
+.gridFit {
+  flex-wrap: wrap;
+  justify-content: space-between;
+  & > .cell {
+    flex: 0 1 auto;
+  }
+}
+
+.gridFull > .cell {
+  flex: 0 0 100%;
+}
+
+.grid1of2 > .cell {
   flex: 0 0 50%;
 }
 
-.flex25 {
-  flex: 0 0 25%;
+.grid1of3 > .cell {
+  flex: 0 0 33.3333%;
 }

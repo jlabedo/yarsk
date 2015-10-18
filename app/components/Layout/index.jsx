@@ -1,4 +1,5 @@
 import React from 'react'
+import classnames from 'classnames'
 
 import TopNavBar from '../TopNavBar'
 import SideNavBar from '../SideNavBar'
@@ -24,15 +25,18 @@ export default class Layout extends React.Component {
           <TopNavBar onBurgerClick={this.toggleNavBar.bind(this)} />
           <main>
             <h2>Main content</h2>
-            <div className={grid.flexContainer}>
-              <div className={grid.flex50}>
-                <Statistic label='commandes' value='2 459' variation='+5%' />
+            <div className={classnames(grid.grid, grid.gridFit)}>
+              <div className={grid.cell}>
+                <Statistic label='commandes' value='2,459' variation='+5%' />
               </div>
-              <div className={grid.flex50}>
-                <InputText label='Input' />
-                <button>Submit</button>
+              <div className={grid.cell}>
+                <Statistic label='commandes' value='2,459' variation='+5%' />
+              </div>
+              <div className={grid.cell}>
+                <Statistic label='commandes' value='2,459' variation='+5%' />
               </div>
             </div>
+            <InputText label='Input' />
           </main>
         </div>
       </div>)
