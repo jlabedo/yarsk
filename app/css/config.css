@@ -11,7 +11,8 @@
   --body-bg: #252830;
   --body-color: #cfd2da;
 
-  --flex-gutter: 1em;
+  --grid-gutter: 1em;
+  --grid-vertical-spacing: 1em;
 }
 
 @custom-selector :--headings h1, h2, h3, h4, h5, h6;

@@ -2,12 +2,12 @@
 
 .grid {
   display: flex;
-  margin: -var(--flex-gutter) 0 0 -var(--flex-gutter);
+  margin: -var(--grid-gutter) 0 var(--grid-vertical-spacing) -var(--grid-gutter);
 }
 
 .cell {
   flex: 1;
-  padding: var(--flex-gutter) 0 0 var(--flex-gutter);
+  padding: var(--grid-gutter) 0 0 var(--grid-gutter);
 }
 
 .gridFit {
